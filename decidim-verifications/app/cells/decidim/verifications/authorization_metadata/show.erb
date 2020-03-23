@@ -1,0 +1,15 @@
+<p>
+  <%= t("authorization_metadata.info", scope: "decidim.verifications.authorizations") %>
+</p>
+
+<ul>
+  <% if model.metadata.present? %>
+    <% model.metadata.each do |key, value| %>
+      <li>
+        <%= t("#{model.name}.fields.#{key}", scope: "decidim.authorization_handlers") %>:
+        <strong><%= value %></strong>
+    <% end %>
+  <% else %>
+    <li> <%= t("authorization_metadata.no_data_stored", scope: "decidim.verifications.authorizations") %></li>
+  <% end %>
+</ul>

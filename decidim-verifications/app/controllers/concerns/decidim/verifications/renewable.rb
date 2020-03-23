@@ -23,6 +23,12 @@ module Decidim
             end
           end
         end
+
+        def renew_modal
+          respond_to do |format|
+            format.html { render layout: nil }
+          end
+        end
       end
     end
   end
